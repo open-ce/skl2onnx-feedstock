@@ -11,31 +11,28 @@ source:
   sha256: fb404ee57d5d65bdd683ca5b7a8e2f2e06537b06ff7fd640440b1874cc2f4f53
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  string: py_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python
   run:
-    - python >=3.6
-    - six
-    - numpy >=1.15
-    - scipy >=1.0
-    - protobuf
-    - onnx >=1.2.1
+    - python
+    - six {{ six }}
+    - numpy {{ numpy }}
+    - scipy {{ scipy }}
+    - protobuf {{ protobuf }}
+    - onnx {{ onnx }}
     - scikit-learn >=0.19
-    - onnxconverter-common >=1.6.1
+    - onnxconverter-common {{ onnxconverter_common }}
 
 test:
   imports:
     - skl2onnx
-  commands:
-    - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/onnx/sklearn-onnx
@@ -45,4 +42,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - xhochy
+    - open-ce/open-ce-dev-team
