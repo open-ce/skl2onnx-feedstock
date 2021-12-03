@@ -1,5 +1,5 @@
 {% set name = "skl2onnx" %}
-{% set version = "1.10.0" %}
+{% set version = "1.10.3" %}
 
 
 package:
