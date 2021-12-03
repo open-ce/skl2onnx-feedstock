@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/onnx/sklearn-onnx/archive/{{ version }}.tar.gz
-  sha256: 724fcfb5d5bab68833ce4164d62aaaf84d91c39161544b597f52077faa7217af
+  sha256: df792aa8198eda399eaae7f99fca15365066f344dc352557303dc913bf1a2028
 
 build:
   number: 1
