@@ -1,5 +1,5 @@
 {% set name = "skl2onnx" %}
-{% set version = "1.10.3" %}
+{% set version = "1.11.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/onnx/sklearn-onnx/archive/{{ version }}.tar.gz
-  sha256: df792aa8198eda399eaae7f99fca15365066f344dc352557303dc913bf1a2028
+  sha256: 0b45e70d3e29e2c22c8586803392b40f3eb979439c3ac7249d0c61ff09801a98
 
 build:
-  number: 2
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
