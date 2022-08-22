@@ -1,5 +1,5 @@
 {% set name = "skl2onnx" %}
-{% set version = "1.11.2" %}
+{% set version = "1.12" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/onnx/sklearn-onnx/archive/{{ version }}.tar.gz
-  sha256: 21ad237a6a122779df9693f4236a92aaf080e05e4472aef2ca8770160b1fe3ba
+  url: https://github.com/onnx/sklearn-onnx/archive/v{{ version }}.tar.gz
+  sha256: 782216a8cab111e8db7b0bb63cc8b4077b4ae29e3df770cfd7a47b7a5c3d8bd5
 
 build:
   number: 1
@@ -29,6 +29,7 @@ requirements:
     - onnx {{ onnx }}
     - scikit-learn >=0.19
     - onnxconverter-common {{ onnxconverter_common }}
+    - packaging
 
 test:
   imports:
