@@ -1,14 +1,16 @@
 {% set name = "skl2onnx" %}
-{% set version = "1.13" %}
+{% set build_version = "1.13" %}
 
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ build_version }}
 
 source:
-  url: https://github.com/onnx/sklearn-onnx/archive/{{ version }}.tar.gz
-  sha256: e860295f6e9f20da2ccb93ff208fae545b1522bcb0840399e5ff86e911c6c525
+  git_url: https://github.com/onnx/sklearn-onnx.git
+  git_rev: {{ build_version }}
+  patches:
+    - 0001-Update-pin-of-scikit-learn.patch
 
 build:
   number: 1
@@ -34,6 +36,8 @@ requirements:
 test:
   imports:
     - skl2onnx
+  commands:
+    - pip check
 
 about:
   home: https://github.com/onnx/sklearn-onnx
