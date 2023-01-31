@@ -1,0 +1,24 @@
+From ac873732d6b4565b6b481dbef6ecda485251db5e Mon Sep 17 00:00:00 2001
+From: ArchanaShinde1 <archana.shinde2504@gmail.com>
+Date: Tue, 17 Jan 2023 07:25:44 +0000
+Subject: [PATCH] Update pin of scikit-learn
+
+---
+ requirements.txt | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/requirements.txt b/requirements.txt
+index 5a07e0f..faa2717 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -3,6 +3,5 @@ scipy>=1.0
+ protobuf
+ onnx>=1.2.1
+ scikit-learn>=0.19
+-scikit-learn<=1.1.1
+ onnxconverter-common>=1.7.0
+-scikit-learn<=1.1.1
++
+-- 
+2.34.1
+
