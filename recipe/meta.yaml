@@ -27,7 +27,7 @@ requirements:
     - scipy {{ scipy }}
     - protobuf {{ protobuf }}
     - onnx {{ onnx }}
-    - scikit-learn >=0.19
+    - scikit-learn {{ scikit_learn }}
     - onnxconverter-common {{ onnxconverter_common }}
     - packaging
 
