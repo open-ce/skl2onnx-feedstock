@@ -1,5 +1,5 @@
 {% set name = "skl2onnx" %}
-{% set build_version = "1.13" %}
+{% set build_version = "1.14" %}
 
 
 package:
@@ -9,11 +9,9 @@ package:
 source:
   git_url: https://github.com/onnx/sklearn-onnx.git
   git_rev: {{ build_version }}
-  patches:
-    - 0001-Update-pin-of-scikit-learn.patch
 
 build:
-  number: 2
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
@@ -29,7 +27,7 @@ requirements:
     - scipy {{ scipy }}
     - protobuf {{ protobuf }}
     - onnx {{ onnx }}
-    - scikit-learn >=0.19
+    - scikit-learn {{ scikit_learn }}
     - onnxconverter-common {{ onnxconverter_common }}
     - packaging
 
